@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Questions from '../components/Questions'
-import QuestionInput from '../components/QuestionInput'
+import Entries from './components/Entries'
+import EntryInput from './components/EntryInput'
 
 
 export class EntriesContainer extends Component {

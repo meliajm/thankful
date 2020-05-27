@@ -15,9 +15,7 @@ const addEntries = entries => ({
 })
 
 export const addEntry = (entry, routerProps) => {
-    console.log('b')
     return dispatch => {
-        console.log('c')
         return fetch(baseURL+"entries", {
             credentials: "include",
             method: "POST",
@@ -39,9 +37,7 @@ export const addEntry = (entry, routerProps) => {
             }
             // return newEntry
         })
-        console.log('e')
     }
-    console.log('f')
 }
 
 export const addQ = entry => ({ type: "ADD_ENTRY", entry})
