@@ -12,11 +12,8 @@ const Entry = (props) => {
             </li>
             <Link to={`${props.entry.id}/edit`}>Edit this entry</Link>
             <br />
-            {/* <button
-            onClick={() => props.deleteQuestion(props.question.id, props.history)}
-            >Delete this question</button> */}
         </p>
     )
 }
 
-export default (Question)
+export default (Entry)
