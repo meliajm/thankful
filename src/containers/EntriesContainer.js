@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Entries from '../components/Entries'
 import EntryInput from '../components/EntryInput'
 
-
 export class EntriesContainer extends Component {
 
     render() {

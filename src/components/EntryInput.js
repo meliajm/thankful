@@ -37,13 +37,14 @@ export class EntryInput extends Component {
             <>
             <h4>Input your entry</h4>
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
-                    <input 
+                    <textarea 
                     type="text"
                     onChange={(event) => this.handleOnChange(event)}
                     name="entry"
                     value={this.state.entry}
                     placeholder="What are you thankful for today?"
                     />
+                    <br/>
                     <input type="submit"/>
                 </form>
                 

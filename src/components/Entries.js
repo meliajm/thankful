@@ -4,11 +4,17 @@ import EntryCard from './EntryCard'
 export default function Entries(props) {
     console.log('entries', props)
     return (
-        <div>
+        
+            <div>
+                {props.entries.map( entry => 
+                (entry) ?  <EntryCard entry={entry}
+                    key={entry.id}
+                    /> : null)}
+                
             
-            {props.entries.map( entry => <EntryCard entry={entry}
-            key={entry.id}
-            />)} 
         </div>
+
+        
+       
     )
 }
