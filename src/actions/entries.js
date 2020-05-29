@@ -15,7 +15,12 @@ const addEntries = entries => ({
 })
 
 export const addEntry = (entry, routerProps) => {
+    console.log('addEntry', entry)
     return dispatch => {
+        const body = {
+            entry
+          }
+          console.log(body)
         return fetch(baseURL+"entries", {
             credentials: "include",
             method: "POST",
@@ -23,19 +28,17 @@ export const addEntry = (entry, routerProps) => {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({entry: entry})
+            body: JSON.stringify(body)
         })
         .then(response => response.json())
         .then( newEntry => {
-            console.log('qaaaaAA', newEntry)
-            console.log('d')
+            console.log('addEntry', newEntry)
             if (newEntry.error) {
                 console.log(newEntry.error)
             } else {
+                console.log(addQ)
                 dispatch(addQ(newEntry))
-                // routerProps.history.push('/entries')
             }
-            // return newEntry
         })
     }
 }
@@ -59,9 +62,7 @@ export const updateEntry = (entry, routerProps) => {
                     console.log(entry.error)
                 } else {
                     dispatch(updateEntrySuccess(entry))
-                    // routerProps.push('/entries')
                 }
-                // return entry
             })
     }
 }

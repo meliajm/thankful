@@ -17,7 +17,7 @@ const entriesReducer = (
                 entries: action.entries
             }
         case 'ADD_ENTRY':
-            return {...state, entries: state.entries.concat(action.entries)}
+            return {...state, entries: state.entries.concat(action.entry)}
         case "UPDATE_ENTRY_SUCCESS":
             console.log("state in update  suc", state)
             console.log(action.entry.id)

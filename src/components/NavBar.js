@@ -6,14 +6,13 @@ import Logout from './Logout'
 const NavBar = ({ currentUser }) => {
     return (
         <nav className="nav">
-            { Object.keys(currentUser).length > 0 ? <><h3 className="logout"> Welcome, {currentUser.username}!</h3> <Logout/>
-            <br/>
-            <h3 className="home"><Link to='/'>Home</Link></h3>
-            <h3 className="entries"><Link to='/entries'>Entries</Link></h3>
+            { Object.keys(currentUser).length > 0 ? <><h3> Welcome, {currentUser.username}! <Logout/></h3> 
+            <h3><Link to='/'>Home</Link>   <Link to='/entries'>Entries</Link></h3>
+            <h3></h3>
 
             </> :
              <>
-             <h3 className="logout">
+             <h3 className="nav">
              <Link to='/login'>Log In</Link>
              </h3>
              </>
