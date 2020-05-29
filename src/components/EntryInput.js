@@ -20,13 +20,15 @@ export class EntryInput extends Component {
     handleOnSubmit = event => {
         console.log('submit', this.state)
         event.preventDefault()
-        if (!this.state.entry) {
+        if (this.state.entry==="") {
             console.log('hey you gotta enter your content, no blanks')
-        }
-        this.props.addEntry(this.state, this.props.routerProps)
+        } else {
+
+            this.props.addEntry(this.state, this.props.routerProps)
             .then(response => {
-                    this.resetForm()
+                this.resetForm()
             })
+        }
     }
 
     resetForm = () => {

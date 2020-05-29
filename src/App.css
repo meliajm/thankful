@@ -1,19 +1,18 @@
-.div {
-  margin-left: 200px;
-}
-
-div {
-  margin-left: 100px;
-}
-
 .App {
   text-align: center;
 }
 
-.container {
-  columns: 2 auto;
+
+
+#left {
+  /* columns: 2 auto; */
+  text-align: left;
 }
 
+#right {
+  text-align: left;
+  /* columns: 2 auto; */
+}
 
 .App-header {
   background-color: #282c34;

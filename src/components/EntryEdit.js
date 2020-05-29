@@ -19,12 +19,14 @@ export class EntryEdit extends Component {
         event.preventDefault()
         if (!this.state.entry) {
             console.log('hey you gotta enter your entry, no blanks')
-        }
-        this.props.updateEntry(this.state, this.props.routerProps)
+        } else {
+
+            this.props.updateEntry(this.state, this.props.routerProps)
             .then(response => {
                 this.resetForm()
                 this.props.history.push('/entries')
             })
+        }
     }
 
     resetForm = () => {
