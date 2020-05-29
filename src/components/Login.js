@@ -28,7 +28,7 @@ export class Login extends React.Component {
 
     render() {
         return (
-            <p>
+            <div>
             <Header title={'Log in please'} />
 
             <form onSubmit={(event) => this.handleOnSubmit(event)}>
@@ -42,7 +42,9 @@ export class Login extends React.Component {
             />
             <input 
             className="input"
-            type="password" 
+            // type="password" 
+            type="text" 
+
             onChange={(event) => this.handleOnChange(event)}
             name="password"
             value={this.state.password}
@@ -54,7 +56,7 @@ export class Login extends React.Component {
             value="Log In"
             />
         </form>
-        </p>
+        </div>
         )
     }
 }

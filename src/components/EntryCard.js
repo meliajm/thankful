@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 
 const EntryCard = ({ entry }) => {
     return (
-        <p>
+        <div>
          <Link to={`entries/${entry.id}`}>{entry.entry}<br/></Link>
-        </p>
+         {/* {entry.} */}
+        </div>
     )
 }
 

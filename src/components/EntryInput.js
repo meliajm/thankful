@@ -6,6 +6,7 @@ export class EntryInput extends Component {
 
     state = {
         entry: "",
+        user: ""
     }
 
     handleOnChange = event => {
@@ -14,6 +15,7 @@ export class EntryInput extends Component {
         })
     }
     
+    //add user to action
     handleOnSubmit = event => {
         console.log('submit', this.state)
         event.preventDefault()
@@ -33,6 +35,7 @@ export class EntryInput extends Component {
     }
 
     render() {
+        // console.log('entry input', this.props.user)
         return (
             <>
             <h4>Input your entry</h4>
@@ -45,6 +48,7 @@ export class EntryInput extends Component {
                     placeholder="What are you thankful for today?"
                     />
                     <br/>
+                    <input type="hidden" id={this.props.id} value={this.props.user.id} />
                     <input type="submit"/>
                 </form>
                 

@@ -3,7 +3,7 @@ const baseURL = "http://localhost:3001/api/v1/"
 export const fetchEntries = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_ENTRIES'})
-        fetch(baseURL+'entries')
+        fetch(baseURL+'posts')
         .then(response => { return response.json()})
         .then( entries => {dispatch(addEntries(entries))})
     }
@@ -21,7 +21,7 @@ export const addEntry = (entry, routerProps) => {
             entry
           }
           console.log(body)
-        return fetch(baseURL+"entries", {
+        return fetch(baseURL+"posts", {
             credentials: "include",
             method: "POST",
             headers: {
@@ -47,7 +47,7 @@ export const addQ = entry => ({ type: "ADD_ENTRY", entry})
 
 export const updateEntry = (entry, routerProps) => {
     return dispatch => {
-        return fetch(baseURL+`entries/${entry.id}`, {
+        return fetch(baseURL+`posts/${entry.id}`, {
             credentials: "include",
             method: "PATCH",
             headers: {
@@ -71,7 +71,7 @@ export const updateEntrySuccess = entry => ({ type: "UPDATE_ENTRY_SUCCESS", entr
 
 export const deleteEntry = (entryId, routerProps) => {
     return dispatch => {
-        return fetch(baseURL+`entries/${entryId}`, {
+        return fetch(baseURL+`posts/${entryId}`, {
             method: "DELETE",
             headers: {
                 'Accept': 'application/json',
@@ -80,7 +80,7 @@ export const deleteEntry = (entryId, routerProps) => {
         })
             .finally( resp => {
                     dispatch(deleteEntrySuccess(entryId))
-                    routerProps.push('/entries')
+                    routerProps.push('/posts')
                     // console.log(routerProps)
              })   
     }

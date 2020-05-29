@@ -9,9 +9,9 @@ export class EntriesContainer extends Component {
         return (
             <div>
                 {/* <h4>Entries</h4> */}
-                    <p>
-                        <EntryInput />
-                    </p>
+                    <>
+                        <EntryInput user={this.props.user} />
+                    </>
                     <Entries entries={this.props.entries} />
             </div>
         )

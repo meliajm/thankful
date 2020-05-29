@@ -27,7 +27,7 @@ export class App extends Component {
               <NavBar />
                 <Route 
                 exact path="/entries" 
-                render={routerProps => <EntriesContainer entries={this.props.entries} />} 
+                render={routerProps => <EntriesContainer entries={this.props.entries} user={this.props.user}/>} 
                 />
                 
             <Route exact path="/entries/:id" 
@@ -66,7 +66,8 @@ export class App extends Component {
 const mapStateToProps = state => {
   return {
     loggedIn: (Object.keys(state.currentUser).length === 0) ? false : true,
-    entries: state.entriesReducer.entries
+    entries: state.entriesReducer.entries,
+    user: state.currentUser
   }
 }
 
