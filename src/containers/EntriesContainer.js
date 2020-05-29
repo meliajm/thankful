@@ -12,7 +12,7 @@ export class EntriesContainer extends Component {
                     <>
                         <EntryInput user={this.props.user} />
                     </>
-                    <Entries entries={this.props.entries} />
+                    <Entries entries={this.props.entries} user={this.props.user}/>
             </div>
         )
     }

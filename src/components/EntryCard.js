@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom'
 
 const EntryCard = ({ entry }) => {
     return (
-        <div>
-         <Link to={`entries/${entry.id}`}>{entry.entry}<br/></Link>
-         {/* {entry.} */}
-        </div>
+        <>
+            {
+                (entry.user) ? 
+                <div className="container">
+                <Link to={`entries/${entry.id}`}>{entry.entry}<br/></Link>
+                by <strong>{entry.user.username}</strong> at {entry.created_at.slice(0, 10)}
+                </div> 
+                :
+                <Link to={`entries/${entry.id}`}>{entry.entry}<br/></Link>
+            }
+        </>
     )
 }
 

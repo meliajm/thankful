@@ -34,7 +34,7 @@ export class App extends Component {
                 render={(routerProps) => {
                     const entry = this.props.entries.find(entry => entry.id === parseInt(routerProps.match.params.id))
                     return ( entry &&
-                    <Entry {...routerProps} entry={entry} />)
+                    <Entry {...routerProps} entry={entry}/>)
                 }}/>
             <Route exact path="/entries/:id/edit"
                 render={(routerProps) => {

@@ -18,9 +18,9 @@ export const addEntry = (entry, routerProps) => {
     console.log('addEntry', entry)
     return dispatch => {
         const body = {
-            entry
-          }
-          console.log(body)
+            post: entry
+        }
+        console.log(body)
         return fetch(baseURL+"posts", {
             credentials: "include",
             method: "POST",
@@ -31,22 +31,27 @@ export const addEntry = (entry, routerProps) => {
             body: JSON.stringify(body)
         })
         .then(response => response.json())
-        .then( newEntry => {
-            console.log('addEntry', newEntry)
-            if (newEntry.error) {
-                console.log(newEntry.error)
+        .then( newPost => {
+            console.log('addEntry', newPost)
+            if (newPost.error) {
+                console.log(newPost.error)
             } else {
-                console.log(addQ)
-                dispatch(addQ(newEntry))
+                // console.log(addQ)
+                dispatch(addPost(newPost))
             }
         })
     }
 }
 
-export const addQ = entry => ({ type: "ADD_ENTRY", entry})
+export const addPost = post => ({ type: "ADD_ENTRY", post})
 
 export const updateEntry = (entry, routerProps) => {
+    console.log(entry)
     return dispatch => {
+        const body = {
+            post: entry
+        }
+        console.log(body)
         return fetch(baseURL+`posts/${entry.id}`, {
             credentials: "include",
             method: "PATCH",
@@ -54,14 +59,15 @@ export const updateEntry = (entry, routerProps) => {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({entry: entry})
+            body: JSON.stringify(body)
         })
             .then( response => response.json())
-            .then( entry => {
-                if (entry.error) {
-                    console.log(entry.error)
+            .then( updatedPost => {
+                console.log('up', updatedPost)
+                if (updatedPost.error) {
+                    console.log(updatedPost.error)
                 } else {
-                    dispatch(updateEntrySuccess(entry))
+                    dispatch(updateEntrySuccess(updatedPost))
                 }
             })
     }

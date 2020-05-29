@@ -5,14 +5,12 @@ export default function Entries(props) {
     console.log('entries', props)
     return (
         
-            <div>
+            <>
                 {props.entries.map( entry => 
                 (entry) ?  <EntryCard entry={entry}
                     key={entry.id}
-                    /> : null)}
-                
-            
-        </div>
+                    /> : null)} 
+            </>
 
         
        

@@ -6,12 +6,13 @@ export class EntryInput extends Component {
 
     state = {
         entry: "",
-        user: ""
+        user_id: ""
     }
 
     handleOnChange = event => {
         this.setState({
-            [event.target.name]: event.target.value
+            entry: event.target.value,
+            user_id: this.props.user.id
         })
     }
     
@@ -30,7 +31,8 @@ export class EntryInput extends Component {
 
     resetForm = () => {
         this.setState({
-            entry: ""
+            entry: "",
+            user_id: ""
         })
     }
 
@@ -48,7 +50,10 @@ export class EntryInput extends Component {
                     placeholder="What are you thankful for today?"
                     />
                     <br/>
-                    <input type="hidden" id={this.props.id} value={this.props.user.id} />
+                    <input 
+                    type="hidden" 
+                    onChange={(event) => this.handleOnChange(event)}
+                    value={this.state.user_id} />
                     <input type="submit"/>
                 </form>
                 

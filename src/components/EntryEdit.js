@@ -32,19 +32,17 @@ export class EntryEdit extends Component {
     }
     
     render() {
-        console.log('qe', this.props)
         return (
             
             
             <div className="div">
                 <h4>Edit Entry</h4>
                 <form onSubmit={(event) => this.handleSubmit(event)}>
-                    <input 
+                    <textarea
                     type="text"
                     onChange={(event) => this.handleChange(event)}
                     name="entry"
                     value={this.state.entry}
-                    placeholder="Edit your entry"
                     />
                     <input type="submit"/>
                 </form>  
