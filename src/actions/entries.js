@@ -1,5 +1,5 @@
-const baseURL = "http://localhost:3001/api/v1/"
-
+// const baseURL = "http://localhost:3001/api/v1/"
+const baseURL = "https://cryptic-reaches-70547.herokuapp.com/api/v1/"
 export const fetchEntries = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_ENTRIES'})

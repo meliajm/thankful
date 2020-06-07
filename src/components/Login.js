@@ -42,9 +42,7 @@ export class Login extends React.Component {
             />
             <input 
             className="input"
-            // type="password" 
-            type="text" 
-
+            type="password" 
             onChange={(event) => this.handleOnChange(event)}
             name="password"
             value={this.state.password}
